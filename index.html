@@ -2,37 +2,36 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <title>PAG | Otok Kamena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAG | My Island</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hero">
+    <div class="glass-card">
         <h1>PAG</h1>
-    </div>
+        <h2>Otok kamena i soli</h2>
 
-    <div class="container">
-        <section class="info-section">
-            <h2>01. OKUSI</h2>
-            <p>Kada dođeš na Pag, ne pitaš puno. Uzmeš <strong>paški sir i janjetinu</strong>. To je okus kamena i soli koji ne možeš naći nigdje drugdje na svijetu.</p>
-            <div class="photo-grid">
-                <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?q=80&w=1000" alt="Sir">
-                <img src="https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=1000" alt="Janjetina">
+        <div class="content-section">
+            <div class="info-item">
+                <h3>🥩 Obavezno probati</h3>
+                <p>Paški sir i janjetina. To je osnova, nema dalje.</p>
             </div>
-        </section>
 
-        <section class="info-section">
-            <h2>02. MORE</h2>
-            <p>Zaboravi gužvu. Ako želiš pravi Pag, ideš u <strong>Bošanu</strong> na plažu <strong>Sveta Marija</strong>. Ako je tamo previše ljudi, tvoja tajna je <strong>Rikova kotica</strong>. Gradsku plažu ostavi za popodnevnu kavu na Trgu.</p>
-            <div class="photo-grid">
-                <img src="https://images.unsplash.com/photo-1502613374390-8da7aa532177?q=80&w=1000" alt="Bošana">
-                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1000" alt="Plaža">
+            <div class="info-item">
+                <h3>🏖️ Najbolja plaža</h3>
+                <p>Sveta Marija u Bošani za mir, ili Rikova kotica ako želiš pobjeći od svih.</p>
             </div>
-        </section>
-    </div>
 
-    <div class="bura-bar" id="bura-status" onclick="promijeniBuru()">
-        STATUS: JUGO (MIRNO MORE) - KLIKNI ZA BURU
+            <div class="info-item">
+                <h3>☕ Đir po gradu</h3>
+                <p>Popodnevno kupanje na gradskoj plaži, a onda kava na Trgu.</p>
+            </div>
+        </div>
+
+        <div class="bura-badge" id="buraBtn" onclick="checkBura()">
+            STATUS: BURU AKTIVIRAJ
+        </div>
     </div>
 
     <script src="app.js"></script>
