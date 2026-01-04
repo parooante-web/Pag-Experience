@@ -1,79 +1,77 @@
 :root {
-    --primary: #00a8ff;
-    --dark: #0f172a;
-    --light: #f8fafc;
-    --accent: #ffd700;
+    --primary: #00d2ff;
+    --gold: #ffcf33;
+    --dark: #0a0f18;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
 
-body { background-color: var(--light); color: var(--dark); overflow-x: hidden; transition: 0.5s; }
+body { background-color: var(--dark); color: #fff; line-height: 1.6; }
 
-/* Bura Mode */
-body.bura-active { background-color: #cbd5e1; filter: saturate(0.8); }
-body.bura-active h1 { color: #f1f5f9; text-shadow: 0 0 20px rgba(255,255,255,0.5); }
-
+/* Hero Sekcija sa slikom Paga iz zraka */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.3)), 
-                url('https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?q=80&w=2070&auto=format&fit=crop');
+    background: linear-gradient(rgba(0,0,0,0.2), var(--dark)), 
+                url('https://images.unsplash.com/photo-1551635338-79549557e497?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Parallax efekt */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
-    position: relative;
 }
 
-.hero h1 { font-size: clamp(4rem, 15vw, 10rem); font-weight: 900; letter-spacing: -2px; }
-
-.status-bar {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: space-around;
+.hero h1 { 
+    font-size: clamp(5rem, 18vw, 12rem); 
+    font-weight: 900; 
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -5px;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-
-.section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
-
-.line { width: 80px; height: 5px; background: var(--primary); }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px; }
+/* Kartice sa slikama */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 40px 0; }
 
 .pro-card {
-    background: white;
-    border-radius: 20px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
+    transition: 0.5s;
 }
 
-.pro-card:hover { transform: translateY(-15px); }
+.pro-card:hover { transform: translateY(-10px) scale(1.02); border-color: var(--primary); }
 
-.pro-card img, .icon-placeholder { width: 100%; height: 250px; object-fit: cover; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
-
-.badge { position: absolute; top: 20px; right: 20px; background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+.card-img-wrap { width: 100%; height: 280px; overflow: hidden; }
+.card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+.pro-card:hover img { transform: scale(1.1); }
 
 .card-body { padding: 30px; }
+.card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; color: var(--primary); }
 
+/* Bura Button */
 .bura-btn {
-    position: fixed; bottom: 30px; right: 30px; background: white; color: var(--dark);
-    padding: 15px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; z-index: 1000; border: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px;
+    position: fixed; bottom: 40px; right: 40px; 
+    background: var(--primary); color: var(--dark);
+    padding: 18px 30px; border-radius: 100px; font-weight: 900;
+    cursor: pointer; z-index: 1000; border: none;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    transition: 0.3s;
 }
 
-.adventure-box { background: var(--dark); color: white; border-radius: 30px; padding: 60px; margin-top: 100px; display: flex; align-items: center; flex-wrap: wrap; gap: 40px; }
-.adventure-text h2 { color: var(--accent); font-size: 2.5rem; }
-.adventure-icon { font-size: 6rem; opacity: 0.3; }
+.bura-btn:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--primary); }
 
-footer { text-align: center; padding: 60px; background: #0f172a; color: #475569; }
+/* Bura Mode Effects */
+body.bura-active { filter: contrast(1.2) brightness(0.8) hue-rotate(-10deg); }
+body.bura-active::after {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    pointer-events: none; opacity: 0.1; z-index: 9999;
+}
