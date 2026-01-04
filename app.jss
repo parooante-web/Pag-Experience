@@ -1,33 +1,21 @@
-// Funkcija za ažuriranje sata
 function updateClock() {
-    const clockElement = document.getElementById('clock');
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    
-    clockElement.innerText = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('clock').innerText = now.toLocaleTimeString('hr-HR');
 }
-
-// Pokreni sat svake sekunde
 setInterval(updateClock, 1000);
-updateClock(); // Inicijalni poziv
+updateClock();
 
-// Funkcija za Bura Mod
 function toggleBura() {
-    const body = document.body;
-    const btnText = document.getElementById('btn-text');
-    const icon = document.getElementById('wind-icon');
+    document.body.classList.toggle('bura-active');
+    const btn = document.querySelector('.bura-btn');
     
-    body.classList.toggle('bura-active');
-    
-    if (body.classList.contains('bura-active')) {
-        btnText.innerText = "BURA PUŠE!";
-        icon.innerText = "⚡";
-        console.log("Bura mod aktiviran");
+    if(document.body.classList.contains('bura-active')) {
+        btn.innerHTML = "🌀 BURA PUŠE (ISKLJUČI)";
+        btn.style.background = "#fff";
+        // Simulacija zvuka vjetra u konzoli
+        console.log("Whoooosh! Bura 120km/h");
     } else {
-        btnText.innerText = "AKTIVIRAJ BURU";
-        icon.innerText = "🌬️";
-        console.log("Bura mod deaktiviran");
+        btn.innerHTML = "🌬️ AKTIVIRAJ BURU";
+        btn.style.background = "#00d2ff";
     }
 }
