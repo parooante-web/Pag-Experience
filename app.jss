@@ -1,21 +1,12 @@
-function updateClock() {
-    const now = new Date();
-    document.getElementById('clock').innerText = now.toLocaleTimeString('hr-HR');
-}
-setInterval(updateClock, 1000);
-updateClock();
-
-function toggleBura() {
-    document.body.classList.toggle('bura-active');
-    const btn = document.querySelector('.bura-btn');
-    
-    if(document.body.classList.contains('bura-active')) {
-        btn.innerHTML = "🌀 BURA PUŠE (ISKLJUČI)";
-        btn.style.background = "#fff";
-        // Simulacija zvuka vjetra u konzoli
-        console.log("Whoooosh! Bura 120km/h");
+function promijeniBuru() {
+    const bar = document.getElementById('bura-status');
+    if (bar.innerHTML.includes("JUGO")) {
+        bar.innerHTML = "STATUS: BURA (MOSTRO ZATVOREN) 🌬️";
+        bar.style.backgroundColor = "red";
+        document.body.style.filter = "contrast(1.1)";
     } else {
-        btn.innerHTML = "🌬️ AKTIVIRAJ BURU";
-        btn.style.background = "#00d2ff";
+        bar.innerHTML = "STATUS: JUGO (MIRNO MORE) - KLIKNI ZA BURU";
+        bar.style.backgroundColor = "#000";
+        document.body.style.filter = "none";
     }
 }
