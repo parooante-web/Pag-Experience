@@ -2,68 +2,37 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <title>PAG | The Stone Kingdom</title>
+    <title>PAG | Otok Kamena</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <button class="bura-btn" onclick="toggleBura()">🌬️ AKTIVIRAJ BURU</button>
-
-    <header class="hero">
-        <p style="letter-spacing: 10px; font-weight: 300;">DOBRODOŠLI NA</p>
+    <div class="hero">
         <h1>PAG</h1>
-        <div id="clock" style="font-size: 1.5rem; margin-top: 20px; font-weight: 700;"></div>
-    </header>
+    </div>
 
-    <div class="container" style="max-width: 1200px; margin: auto; padding: 100px 20px;">
-        
-        <h2 style="font-size: 3rem; margin-bottom: 50px; text-align: center;">Okusi Soli</h2>
-        <div class="grid">
-            <div class="pro-card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?q=80&w=1000" alt="Paški Sir">
-                </div>
-                <div class="card-body">
-                    <h3>Zlato Paga</h3>
-                    <p>Paški sir nije samo hrana, to je povijest urezana u kamen. Svaki komad nosi miris kadulje i posolice.</p>
-                </div>
+    <div class="container">
+        <section class="info-section">
+            <h2>01. OKUSI</h2>
+            <p>Kada dođeš na Pag, ne pitaš puno. Uzmeš <strong>paški sir i janjetinu</strong>. To je okus kamena i soli koji ne možeš naći nigdje drugdje na svijetu.</p>
+            <div class="photo-grid">
+                <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?q=80&w=1000" alt="Sir">
+                <img src="https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=1000" alt="Janjetina">
             </div>
+        </section>
 
-            <div class="pro-card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?q=80&w=1000" alt="Janjetina">
-                </div>
-                <div class="card-body">
-                    <h3>Paška Janjetina</h3>
-                    <p>Nema dalje. Najbolje od jadranskog krša, pripremljeno na tradicionalan način.</p>
-                </div>
+        <section class="info-section">
+            <h2>02. MORE</h2>
+            <p>Zaboravi gužvu. Ako želiš pravi Pag, ideš u <strong>Bošanu</strong> na plažu <strong>Sveta Marija</strong>. Ako je tamo previše ljudi, tvoja tajna je <strong>Rikova kotica</strong>. Gradsku plažu ostavi za popodnevnu kavu na Trgu.</p>
+            <div class="photo-grid">
+                <img src="https://images.unsplash.com/photo-1502613374390-8da7aa532177?q=80&w=1000" alt="Bošana">
+                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1000" alt="Plaža">
             </div>
-        </div>
+        </section>
+    </div>
 
-        <h2 style="font-size: 3rem; margin: 80px 0 50px; text-align: center;">Skrivene Plaže</h2>
-        <div class="grid">
-            <div class="pro-card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1502613374390-8da7aa532177?q=80&w=1000" alt="Bošana">
-                </div>
-                <div class="card-body">
-                    <h3>Sveta Marija, Bošana</h3>
-                    <p>Tamo gdje more ljubi goli kamen. Tvoj bijeg od ljetne gužve i pravi mir.</p>
-                </div>
-            </div>
-
-            <div class="pro-card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1000" alt="Plaža">
-                </div>
-                <div class="card-body">
-                    <h3>Rikova Kotica</h3>
-                    <p>Džep čistog Jadrana. Lokalna tajna koju vrijedi istražiti.</p>
-                </div>
-            </div>
-        </div>
-
+    <div class="bura-bar" id="bura-status" onclick="promijeniBuru()">
+        STATUS: JUGO (MIRNO MORE) - KLIKNI ZA BURU
     </div>
 
     <script src="app.js"></script>
