@@ -1,12 +1,12 @@
-function promijeniBuru() {
-    const bar = document.getElementById('bura-status');
-    if (bar.innerHTML.includes("JUGO")) {
-        bar.innerHTML = "STATUS: BURA (MOSTRO ZATVOREN) 🌬️";
-        bar.style.backgroundColor = "red";
-        document.body.style.filter = "contrast(1.1)";
+function checkBura() {
+    const btn = document.getElementById('buraBtn');
+    if (btn.innerText.includes("AKTIVIRAJ")) {
+        btn.innerText = "⚠️ BURA PUŠE - MOST ZATVOREN";
+        btn.style.background = "#000";
+        document.body.style.background = "linear-gradient(45deg, #2c3e50, #000000)";
     } else {
-        bar.innerHTML = "STATUS: JUGO (MIRNO MORE) - KLIKNI ZA BURU";
-        bar.style.backgroundColor = "#000";
-        document.body.style.filter = "none";
+        btn.innerText = "STATUS: BURU AKTIVIRAJ";
+        btn.style.background = "#ef4444";
+        document.body.style.background = "linear-gradient(45deg, #0f172a, #1e293b, #334155)";
     }
 }
