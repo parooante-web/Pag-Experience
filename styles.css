@@ -1,12 +1,56 @@
-function promijeniBuru() {
-    const bar = document.getElementById('bura-status');
-    if (bar.innerHTML.includes("JUGO")) {
-        bar.innerHTML = "STATUS: BURA (MOSTRO ZATVOREN) 🌬️";
-        bar.style.backgroundColor = "red";
-        document.body.style.filter = "contrast(1.1)";
-    } else {
-        bar.innerHTML = "STATUS: JUGO (MIRNO MORE) - KLIKNI ZA BURU";
-        bar.style.backgroundColor = "#000";
-        document.body.style.filter = "none";
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body {
+    background: linear-gradient(45deg, #0f172a, #1e293b, #334155);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
 }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+h2 { color: #3b82f6; margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; }
+
+.content-section {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-left: 4px solid #3b82f6;
+}
+
+.info-item h3 { font-size: 1rem; margin-bottom: 5px; color: #fff; }
+.info-item p { font-size: 0.9rem; color: #cbd5e1; }
+
+.bura-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #ef4444;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bura-badge:hover { transform: scale(1.05); }
